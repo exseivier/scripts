@@ -6,7 +6,7 @@
 rm(list=ls())
 
 args <- commandArgs(trailingOnly=T)
-
+runtable.file <- args[2]
 ### Loading edgeR & locfit libraries
 library(edgeR)
 library(locfit)
@@ -17,7 +17,7 @@ head(tissues)
 # You must assert that the file is named runinfo.txt and the fields are separated by tabs
 # and must be placed in the same folder than counts table
 # This file is obtained by Run Selector tool from NCBI
-runtable <- read.table("runtable.txt", header=T, sep="\t")
+runtable <- read.table(runtable.file, header=T, sep="\t")
 design.tiss <- table(runtable[,c(1,2)])
 groups.tiss <- as.factor(runtable[,"group"])
 treat.tiss <- colnames(design.tiss)

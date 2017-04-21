@@ -31,9 +31,9 @@ for line in IN:
 		if len(fields) < 2:
 			continue
 		try:
-			data_structure[fields[0]].append(float(fields[column-1]))
+			data_structure[fields[0]].append(round(float(fields[column-1])))
 		except Exception:
-			data_structure[fields[0]] = [float(fields[column-1])]
+			data_structure[fields[0]] = [round(float(fields[column-1]))]
 	PROCESSING_FILE.close()
 OUT = open(OUTPUT, "w+")
 OUT.write("ID%s\n" % header)

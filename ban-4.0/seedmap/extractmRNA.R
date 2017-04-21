@@ -8,7 +8,7 @@ library(Biostrings)
 # Javo modified it, getting input path by command line in bash
 args <- commandArgs(trailingOnly=TRUE)
 genome.Path <- args[1]
-outPath <- "3_UTR_OUT"
+outPath <- "mRNA_OUT"
 
 system(paste("mkdir", outPath, sep=" "))
 
